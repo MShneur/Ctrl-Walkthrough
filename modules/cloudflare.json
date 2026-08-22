@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 2,
+  "id": "cloudflare",
+  "version": "2026-08-22.1",
+  "title": "Cloudflare Workers Free",
+  "description": "Reach Workers and Queues on Cloudflare's free plan. R2 is treated as a separate opt-in product because enabling it uses Cloudflare's subscription/checkout flow even though it includes free monthly usage.",
+  "steps": [
+    {
+      "title": "Open Cloudflare Workers",
+      "body": "Control Walkthrough opens Workers & Pages directly. A Worker is a small program that runs on Cloudflare's network.",
+      "action": {
+        "type": "open",
+        "label": "Open Workers & Pages",
+        "url": "https://dash.cloudflare.com/?to=%2F%3Aaccount%2Fworkers-and-pages",
+        "auto": true,
+        "verify": {"urlMatches": "workers|compute"},
+        "verifyTimeoutMs": 12000
+      },
+      "humanGate": "Login, passkey/MFA and CAPTCHA stay under your control."
+    },
+    {
+      "title": "Stay on Workers Free unless you choose otherwise",
+      "body": "Workers has a free plan. Do not accept a paid upgrade, trial or billing change merely to continue this guide.",
+      "action": {"type": "none"},
+      "manualLabel": "Continue"
+    },
+    {
+      "title": "Open Queues",
+      "body": "Queues is available on Workers Free. Control Walkthrough opens the Queues page directly instead of making you hunt through the mobile menu.",
+      "action": {
+        "type": "open",
+        "label": "Open Queues",
+        "url": "https://dash.cloudflare.com/?to=%2F%3Aaccount%2Fworkers%2Fqueues",
+        "auto": true,
+        "verify": {"urlIncludes": "queues"},
+        "verifyTimeoutMs": 12000
+      }
+    },
+    {
+      "title": "R2 is optional and has a separate checkout",
+      "body": "R2 includes free monthly storage/operations, but Cloudflare requires an R2 subscription and checkout flow before you can use it. That may require a billing profile/payment method. Do not enter a card just because a walkthrough reached R2; only enable R2 when the project actually needs durable object storage and you intentionally accept that billing relationship.",
+      "action": {"type": "none"},
+      "humanGate": "Subscription checkout and payment-method entry are always your decision."
+    },
+    {
+      "title": "Open R2 only if you intentionally need it",
+      "body": "This button only opens R2. If Cloudflare shows checkout or asks for a payment method, stop there unless you have deliberately decided to enable R2.",
+      "action": {"type": "open", "label": "Open R2", "url": "https://dash.cloudflare.com/?to=%2F%3Aaccount%2Fr2%2Foverview"},
+      "humanGate": "Control Walkthrough will not accept an R2 subscription or add billing details for you."
+    }
+  ]
+}
