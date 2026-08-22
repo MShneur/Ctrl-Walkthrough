@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 2,
+  "id": "example-tool",
+  "version": "1.1.0",
+  "title": "Example Tool",
+  "description": "Minimal custom walkthrough example. Replace the public URLs, locators and verification signals with the tool you want to guide.",
+  "steps": [
+    {
+      "title": "Open the tool",
+      "body": "Control Walkthrough opens the exact public page and verifies the destination before continuing.",
+      "action": {
+        "type": "open",
+        "label": "Open tool",
+        "url": "https://example.com/",
+        "auto": true,
+        "verify": {"urlIncludes": "example.com"}
+      }
+    },
+    {
+      "title": "Find the next control",
+      "body": "Use a stable selector or accessible/visible label. If several controls are equally plausible, Control Walkthrough should stop instead of guessing.",
+      "action": {"type": "find", "label": "Find sign in"},
+      "target": {"text": ["Sign in", "Log in"]},
+      "humanGate": "Enter credentials yourself. Do not place secrets inside a walkthrough file."
+    },
+    {
+      "title": "Verify the signed-in surface",
+      "body": "Real walkthroughs should use a stable, non-sensitive signal that proves the expected state.",
+      "action": {"type": "none"},
+      "success": {
+        "text": ["Dashboard"],
+        "successMessage": "The expected dashboard control is visible.",
+        "failureMessage": "Dashboard not detected yet; finish sign-in manually and check again."
+      }
+    }
+  ]
+}
