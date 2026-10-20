@@ -2,6 +2,10 @@
 
 Material changes to Control Walkthrough are recorded here.
 
+## Docs — 2026-10-20 (no engine release)
+
+- Authoring rules now require a preparatory **inspect uploaded HTML/screenshot evidence before asking for repeat navigation** step, exact ready-to-paste values only when grounded, and explicit DNS-record versus authoritative-nameserver separation. Links to the independent offline, read-only AoA source-role extractor; no userscript/runtime version changed.
+
 ## 0.5.1 — 2026-08-22
 
 ### Standalone repository
