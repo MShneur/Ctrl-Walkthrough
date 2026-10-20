@@ -22,6 +22,14 @@ For every walkthrough:
 
 If a step needs several independent actions, split it into several steps. The engine may run several safe steps in sequence without asking the user to press Next between them.
 
+## Attachment-first / exact-field verification (AI authoring)
+
+Before you ask a user to navigate or upload another screenshot, inspect **all already-attached relevant screenshots, SingleFile HTML captures, or exported form configuration**. Parse the **complete file**, not a truncated preview. Identify the page/stage from its captured URL, determine each input's role, and distinguish a *DNS record* (A/IP, CNAME, MX, TXT, imported NS) from a registrar's *authoritative nameserver assignment*. Provider-specific values may be copied only from that provider's actual assignment control, never from a parking IP, documentation example, or arbitrary substring of an unrelated page. Use official provider help as the path/fallback authority.
+
+For a user requesting copy-paste boxes, present one **literal, fully verified value** per field in a separate plain text code box. If the uploaded file doesn't contain the required value, say what the file DOES contain, identify the single missing screen and exact button to reach it, and request only that screenshot. No example or bracketed placeholder in a ready-to-paste block. Observe that the Save/Activate/Confirm action remains a human gate; do not claim that entering a field has changed DNS.
+
+The public, reusable operator procedure and read-only Cloudflare HTML source-role extractor are in [Agents-of-AI Provider Field Guidance](https://github.com/MShneur/Agents-of-AI/blob/main/tools/provider-field-guidance.md) and its `tools/scripts/provider_field_evidence.py`. This is an **authoring/preflight step**; it does not add a new runtime engine, make the userscript inspect ChatGPT uploads, install any OCR service, or permit untrusted external web agents to access a signed-in account.
+
 ## Automation priority
 
 Use this order:
